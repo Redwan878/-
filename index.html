@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>নীলাঞ্জণার চুড়ি - প্রিয় তোমার জন্যে</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Hind Siliguri', sans-serif;
+            background-color: #fffafb;
+            scroll-behavior: smooth;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        /* Gradient Colors (Fallback) */
+        .bangle-gradient-red { background: linear-gradient(135deg, #ff4d4d, #b30000); }
+        .bangle-gradient-blue { background: linear-gradient(135deg, #4facfe, #00f2fe); }
+        .bangle-gradient-orange { background: linear-gradient(135deg, #f83600, #f9d423); }
+        .bangle-gradient-green { background: linear-gradient(135deg, #11998e, #38ef7d); }
+        .bangle-gradient-yellow { background: linear-gradient(135deg, #ffe259, #ffa751); }
+        .bangle-gradient-purple { background: linear-gradient(135deg, #6a11cb, #2575fc); }
+        .bangle-gradient-gold { background: linear-gradient(135deg, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c); }
+        .bangle-gradient-pink { background: linear-gradient(135deg, #ff9a9e, #fecfef, #f68084); }
+        .bangle-gradient-black { background: linear-gradient(135deg, #434343, #000000); }
+        .bangle-gradient-silver { background: linear-gradient(135deg, #e0e0e0, #ffffff, #cfcfcf); }
+        .bangle-gradient-teal { background: linear-gradient(135deg, #16a085, #f4d03f); }
+        .bangle-gradient-magenta { background: linear-gradient(135deg, #d53369, #daae51); }
+        .bangle-gradient-copper { background: linear-gradient(135deg, #c79081, #dfa579); }
+        .bangle-gradient-emerald { background: linear-gradient(135deg, #348F50, #56B4D3); }
+        .bangle-gradient-ruby { background: linear-gradient(135deg, #D31027, #EA384D); }
+
+        .hover-scale { transition: transform 0.3s ease; }
+        .hover-scale:hover { transform: scale(1.02); }
+    </style>
+</head>
+<body class="text-gray-800 transition-all duration-500">
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-pink-50 p-4">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <h1 class="text-xl md:text-2xl font-bold text-pink-600 tracking-wide">নীলিমার চুড়ি ✨</h1>
+            <!-- Mobile friendly nav items -->
+            <div class="flex space-x-4 md:space-x-8 text-xs md:text-sm font-medium uppercase tracking-wider">
+                <a href="#" class="hover:text-pink-500 transition-colors">শুরু</a>
+                <a href="#gallery" class="hover:text-pink-500 transition-colors">সবগুলো</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="text-center py-12 md:py-20 px-4 bg-gradient-to-b from-pink-50 to-transparent">
+        <!-- Responsive Text Sizes -->
+        <h2 class="text-3xl md:text-6xl font-bold mb-4 md:mb-6 text-gray-900 leading-tight">তোমার প্রিয় রঙের <br><span class="text-pink-600 underline decoration-pink-200">প্রিয় চুড়ি</span></h2>
+        <p class="text-gray-500 max-w-2xl mx-auto text-base md:text-xl italic font-light">
+            "হাতভর্তি কাঁচের চুড়ি, আর এক চিলতে হাসি— <br class="hidden md:block"> এই তো জীবনের সবচেয়ে সুন্দর সাজ।"
+        </p>
+    </header>
+
+    <!-- Filter Section -->
+    <section id="gallery" class="pt-6 md:pt-10">
+        <div class="text-center mb-6 md:mb-8">
+            <h3 class="text-xl md:text-2xl font-semibold mb-2">পছন্দের রঙ কোনটা ?</h3>
+            <div class="w-16 md:w-20 h-1 bg-pink-500 mx-auto rounded-full"></div>
+        </div>
+        
+        <!-- Filter Buttons (Scrollable on very small screens if needed, otherwise wrap) -->
+        <div class="flex flex-wrap justify-center gap-2 md:gap-3 mb-8 md:mb-12 px-4 max-w-4xl mx-auto">
+            <button onclick="filterBangles('all')" class="px-4 py-1.5 md:px-5 md:py-2 text-sm md:text-base rounded-full border border-pink-100 hover:bg-pink-500 hover:text-white transition-all active:scale-95">সবগুলো</button>
+            <button onclick="filterBangles('লাল')" class="px-3 py-1.5 md:px-4 md:py-2 text-sm md:text-base rounded-full border border-red-200 text-red-600 hover:bg-red-500 hover:text-white transition-all">লাল</button>
+            <button onclick="filterBangles('রুপালী')" class="px-3 py-1.5 md:px-4 md:py-2 text-sm md:text-base rounded-full border border-blue-200 text-blue-600 hover:bg-blue-500 hover:text-white transition-all">রুপালী</button>
+            <button onclick="filterBangles('সবুজ')" class="px-3 py-1.5 md:px-4 md:py-2 text-sm md:text-base rounded-full border border-emerald-200 text-emerald-600 hover:bg-emerald-500 hover:text-white transition-all">সবুজ</button>
+            <button onclick="filterBangles('কমলা')" class="px-3 py-1.5 md:px-4 md:py-2 text-sm md:text-base rounded-full border border-orange-200 text-orange-600 hover:bg-orange-500 hover:text-white transition-all">কমলা</button>
+            <button onclick="filterBangles('হলুদ')" class="px-3 py-1.5 md:px-4 md:py-2 text-sm md:text-base rounded-full border border-yellow-300 text-yellow-700 hover:bg-yellow-500 hover:text-white transition-all">হলুদ</button>
+            <button onclick="filterBangles('সোনালী')" class="px-3 py-1.5 md:px-4 md:py-2 text-sm md:text-base rounded-full border border-yellow-600 text-yellow-800 hover:bg-yellow-700 hover:text-white transition-all">বিশেষ</button>
+            <button onclick="filterBangles('গোলাপী')" class="px-3 py-1.5 md:px-4 md:py-2 text-sm md:text-base rounded-full border border-pink-200 text-pink-600 hover:bg-pink-400 hover:text-white transition-all">গোলাপী</button>
+            <button onclick="filterBangles('বেগুনী')" class="px-3 py-1.5 md:px-4 md:py-2 text-sm md:text-base rounded-full border border-purple-200 text-purple-600 hover:bg-purple-500 hover:text-white transition-all">বেগুনী</button>
+            <button onclick="filterBangles('কালো')" class="px-3 py-1.5 md:px-4 md:py-2 text-sm md:text-base rounded-full border border-gray-300 text-gray-700 hover:bg-gray-800 hover:text-white transition-all">কালো</button>
+             <button onclick="filterBangles('নীল')" class="px-3 py-1.5 md:px-4 md:py-2 text-sm md:text-base rounded-full border border-blue-200 text-blue-600 hover:bg-blue-500 hover:text-white transition-all">নীল</button>
+        </div>
+
+        <!-- Gallery Grid -->
+        <main class="max-w-6xl mx-auto px-4 md:px-6 pb-24">
+            <!-- Responsive Grid: 1 column on mobile, 2 on tablet, 3 on desktop -->
+            <div id="bangle-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10">
+                <!-- Items will be injected by JavaScript -->
+            </div>
+        </main>
+    </section>
+
+    <!-- Footer -->
+    <div class="py-8 md:py-10 text-center text-gray-400 text-xs border-t border-gray-100">
+        <p>© রেদোয়ান ২০২৫-নীলিমার চুড়ি । শুধু তোমার জন্য ভালোবাসায় তৈরি ❤️</p>
+    </div>
+
+    <script>
+        // Data Source with Image Paths
+        const bangles = [
+            { id: 1, image: "1.jpg", name: "হালকা লাল রেশমি", color: "লাল", gradient: "bangle-gradient-red", desc: " পড়ার জন্য সেরা।" },
+            { id: 2, image: "2.jpg", name: "রুপালী কাঁচ", color: "রুপালী", gradient: "bangle-gradient-blue", desc: "শান্ত ও স্নিগ্ধ এক অনুভূতি।" },
+            { id: 3, image: "3.jpg", name: "উজ্জ্বল কমলা আভা", color: "কমলা", gradient: "bangle-gradient-orange", desc: "উৎসবের আমেজে নিজেকে সাজাতে।" },
+            { id: 4, image: "4.jpg", name: "গাঢ় লাল ভেলভেট", color: "লাল", gradient: "bangle-gradient-red", desc: "আভিজাত্যের প্রতীক।" },
+            { id: 5, image: "5.jpg", name: "টিয়ার ডানা", color: "সবুজ", gradient: "bangle-gradient-green", desc: "রহস্যময় ও সুন্দর।" },
+            { id: 6, image: "6.jpg", name: "গোধূলি কমলা", color: "কমলা", gradient: "bangle-gradient-orange", desc: "বিকেলের রোদের মতো মিষ্টি।" },
+            { id: 7, image: "7.jpg", name: "বাসন্তী লাল", color: "লাল", gradient: "bangle-gradient-red", desc: "গায়ে লালের সাজে অনন্যা।" },
+            { id: 8, image: "8.jpg", name: "রাজকীয় নীল", color: "নীল", gradient: "bangle-gradient-blue", desc: "তোমার প্রিয় রঙ।" },
+            { id: 9, image: "9.jpg", name: "সূর্যমুখী", color: "হলুদ", gradient: "bangle-gradient-yellow", desc: "সূর্যের আভা।" },
+            { id: 10, image: "10.jpg", name: "মখমল সবুজ", color: "সবুজ", gradient: "bangle-gradient-green", desc: "আলাদা এক লুকের জন্য।" },
+            { id: 11, image: "11.jpg", name: "সোনালী লালচে রোদ্দুর", color: "সোনালী", gradient: "bangle-gradient-gold", desc: "চিকচিক করা লালচে পাথর।" },
+            { id: 12, image: "12.jpg", name: "সবুজ ছোঁয়া", color: "সবুজ", gradient: "bangle-gradient-green", desc: "ভালোবাসার প্রিয় উপহার।" },
+            { id: 13, image: "13.jpg", name: "মায়াবী সবুজ", color: "সবুজ", gradient: "bangle-gradient-green", desc: "প্রকৃতির সতেজ ছোঁয়া হাতে।" },
+            // Removed: Rani Golapi (id: 14)
+            { id: 15, image: "15.jpg", name: "মিডনাইট ইয়েলো ব্ল্যাক", color: "কালো", gradient: "bangle-gradient-black", desc: "গ্ল্যামারাস নাইটের জন্য পারফেক্ট।" },
+            { id: 16, image: "16.jpg", name: "রঙিন স্বপ্ন", color: "লাল", gradient: "bangle-gradient-teal", desc: "ফলের মতো।" },
+            { id: 17, image: "17.jpg", name: "লালচে মুক্তা  ", color: "সাদা", gradient: "bangle-gradient-silver", desc: "শুভ্রতা এবং আভিজাত্যের প্রতীক।" },
+            { id: 18, image: "18.jpg", name: "ল্যাভেন্ডার ড্রিম", color: "বেগুনী", gradient: "bangle-gradient-purple", desc: "হালকা বেগুনী রঙের মায়া।" },
+            { id: 19, image: "19.jpg", name: "রঙিন উৎসব", color: "রঙিন", gradient: "bangle-gradient-orange", desc: "সব রঙের মিশেলে তৈরি উৎসবের সাজ।" },
+            { id: 20, image: "20.jpg", name: "ম্যাট গোল্ড", color: "সোনালী", gradient: "bangle-gradient-gold", desc: "আধুনিক ডিজাইনের সোনালী ছোঁয়া।" },
+            { id: 21, image: "21.jpg", name: "মেরুন আভা", color: "বেগুনী", gradient: "bangle-gradient-purple", desc: "গাঢ় মেরুন রঙের রাজকীয় ভাব।" },
+            { id: 22, image: "22.jpg", name: "কাঁচা লালচে হলুদ", color: "হলুদ", gradient: "bangle-gradient-yellow", desc: "বসন্তের নতুন পাতা।" },
+            { id: 23, image: "23.jpg", name: "রানি মেজেন্টা", color: "গোলাপী", gradient: "bangle-gradient-magenta", desc: "উজ্জ্বল এবং প্রাণবন্ত রঙের ছোঁয়া।" },
+            { id: 24, image: "24 bg.jpg", name: "তামাটে আভিজাত্য", color: "সোনালী", gradient: "bangle-gradient-copper", desc: "ভিন্টেজ লুকের জন্য পারফেক্ট।" },
+            { id: 25, image: "25.jpg", name: "কন্ঠ সবুজ ", color: "নীল", gradient: "bangle-gradient-blue", desc: "গভীর নীল রঙের মায়াবী রূপ।" },
+            { id: 26, image: "26.jpg", name: "বিশেষ", color: "সোনালী", gradient: "bangle-gradient-emerald", desc: "জমকালোর জন্য সেরা।" },
+            { id: 27, image: "27.jpg", name: "স্টোন গ্রে", color: "কালো", gradient: "bangle-gradient-black", desc: "পাথরের কাজের আধুনিক ডিজাইন।" },
+            { id: 28, image: "28.jpg", name: "রুবী রেড", color: "লাল", gradient: "bangle-gradient-ruby", desc: "ঝকঝকে লাল, সাদা পাথরের কাজ।" },
+            { id: 29, image: "29.jpg", name: "গোধূলি স্বর্ণ", color: "সোনালী", gradient: "bangle-gradient-gold", desc: "সন্ধ্যার সোনালী আলোর মতো।" }
+        ];
+
+        function renderBangles(data) {
+            const grid = document.getElementById('bangle-grid');
+            grid.innerHTML = '';
+            
+            data.forEach(item => {
+                const card = document.createElement('div');
+                // Made padding and rounding responsive
+                card.className = "glass-card p-4 md:p-5 rounded-[2rem] md:rounded-[2.5rem] shadow-sm hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 group";
+                card.innerHTML = `
+                    <div class="h-60 md:h-72 w-full rounded-[1.5rem] md:rounded-[2rem] mb-4 md:mb-6 flex items-center justify-center relative overflow-hidden bg-gray-50 shadow-inner">
+                        <img src="${item.image}" 
+                             alt="${item.name}" 
+                             class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 z-10"
+                             onerror="this.style.display='none'; document.getElementById('fallback-${item.id}').style.opacity='1';">
+                        
+                        <div id="fallback-${item.id}" class="absolute inset-0 ${item.gradient} opacity-0 flex items-center justify-center transition-opacity duration-300">
+                             <svg class="w-32 h-32 md:w-48 md:h-48 text-white opacity-30" viewBox="0 0 100 100">
+                                <circle cx="50" cy="50" r="40" stroke="currentColor" stroke-width="10" fill="none" stroke-dasharray="10 2" />
+                            </svg>
+                        </div>
+
+                        <span class="absolute top-3 right-3 md:top-4 md:right-4 bg-white/30 backdrop-blur-md px-2 py-1 md:px-3 md:py-1 rounded-full text-[10px] font-bold text-white uppercase tracking-widest z-20 shadow-sm">${item.color}</span>
+                    </div>
+                    
+                    <div class="flex justify-between items-start mb-2 md:mb-3">
+                        <div>
+                            <h3 class="text-lg md:text-xl font-bold text-gray-800">${item.name}</h3>
+                            <p class="text-pink-500 text-[10px] md:text-xs font-semibold uppercase tracking-tighter">Handcrafted</p>
+                        </div>
+                        <button onclick="toggleLike(this)" class="p-2 bg-pink-50 rounded-full text-pink-200 hover:text-pink-600 transition-all active:scale-90">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 md:h-6 md:w-6 fill-current" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                        </button>
+                    </div>
+                    <p class="text-gray-500 text-xs md:text-sm leading-relaxed">${item.desc}</p>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        function filterBangles(color) {
+            const grid = document.getElementById('bangle-grid');
+            grid.style.opacity = '0';
+            setTimeout(() => {
+                if (color === 'all') {
+                    renderBangles(bangles);
+                } else {
+                    const filtered = bangles.filter(b => b.color === color);
+                    renderBangles(filtered);
+                }
+                grid.style.opacity = '1';
+            }, 300);
+        }
+
+        function toggleLike(btn) {
+            btn.classList.toggle('text-pink-600');
+            btn.classList.toggle('text-pink-200');
+            btn.classList.toggle('bg-pink-100');
+        }
+
+        window.onload = () => {
+            renderBangles(bangles);
+            document.getElementById('bangle-grid').style.transition = 'opacity 0.3s ease';
+        };
+    </script>
+</body>
+</html>
